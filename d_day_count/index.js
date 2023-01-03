@@ -1,6 +1,7 @@
 const messageContainer = document.querySelector('#d_day_message');
 const container = document.querySelector("#d_day_container");
 const savedDate = localStorage.getItem('saved-date');
+
 const intervalIdArr = [];
 
 container.style.display = "none";
@@ -21,6 +22,9 @@ const dateFormMaker = () => {
 };
 
 const counterMaker = ( data ) => {
+  if (data !== savedDate) {
+    localStorage.setItem('saved-date', data);
+  }
   const nowDate = new Date();
   const targetDate = new Date(data).setHours(0, 0, 0);
   const remaining = (targetDate - nowDate) / 1000;
@@ -69,7 +73,6 @@ const starter = function(targetDateInput) {
   if (!targetDateInput) {
     targetDateInput = dateFormMaker()
   }
-  localStorage.setItem('saved-date', targetDateInput);
 	container.style.display = 'flex';
 	messageContainer.style.display = 'none';
   setClearInterval();
