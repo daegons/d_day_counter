@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head> 
+    <link rel="stylesheet" href="./index.css">
+  </head>
+  <body>
+    <h1>D_Day</h1>
+    <div id="d_day_container">
+      <div class="d_day_child_container">
+        <span id="days">0</span>
+        <span>일</span>
+      </div>
+      <div class="d_day_child_container">
+        <span id="hours">0</span>
+        <span>시간</span>
+      </div>
+      <div class="d_day_child_container">
+        <span id="min">0</span>
+        <span>분</span>
+      </div>
+      <div class="d_day_child_container">
+        <span id="sec">0</span>
+        <span>초</span>
+      </div>
+    </div>
+    <div id="d_day_message"></div>
+    <div id="target_selector">
+      <input id="target_year_input" class="target_input" /> -
+      <input id="target_month_input" class="target_input" /> -
+      <input id="target_date_input" class="target_input" />
+    </div>
+    <button onclick="starter()" class="btn">Count start</button>
+    <button onclick="resetTimer()" class="btn">타이머 초기화</button>
+    <script src="./index.js"></script>
+  </body>
+</html>
